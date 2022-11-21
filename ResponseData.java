@@ -1,13 +1,5 @@
-//do the same with all other boxes needed to do
-//top box is variables, and bottom is methods
-/*import java.util.Scanner;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.FileReader;
-*/
-public class ResponseData extends ResponseDataReader{
-    //include reponseData variable
-    //compareAnswers method
+public class ResponseData{
+    //grabs readResponses method, and put its data into responseData 2D array
     String [][] responseData = readResponses();
 
     public static String[][] compareAnswers(String [][] responseData, String [][] answerData){
