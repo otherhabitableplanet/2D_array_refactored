@@ -3,12 +3,12 @@ public class ResponseData{
     //going to be a string list called ResponseData
     protected String[][] ResponseData;
     
-    //constructor for answerData file name
+    //constructor for ResponseData file name
     public ResponseData(String fileName){
         //takes file name, then gives the reader
         this.fileName = fileName;
         ResponseDataReader reader = new ResponseDataReader(fileName);
-        //will take answer data file from the answer reader
+        //will take answer data file from the response reader
         //runs this as the 2D array
         this.ResponseData = reader.readAnswersOverseer();
     }
