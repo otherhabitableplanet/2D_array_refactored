@@ -1,6 +1,12 @@
 
 class StudentData {
-  String studentFileName = getStudentData()
-  String [][] students = new String[countLines(studentFileName)][];
-  readStudents(studentFileName, students);
+  protected String fileName;
+  protected String[][] StudentData;
+  
+  // constructor for studentData 
+  public StudentData(String fileName){
+    this.fileName = fileName;
+    StudentDataReader reader = new StudentDataReader(fileName);
+    this.StudentData = reader.readStudentsOverseer();
+    }
 }
