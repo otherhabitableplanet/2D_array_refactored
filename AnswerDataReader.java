@@ -1,8 +1,8 @@
 import java.io.*;
 import java.util.Scanner;
 class AnswerDataReader extends ReaderWriter{
-    public AnswerDataReader(){
-        this.fileName = getName();
+    public AnswerDataReader(String fileName){
+        this.fileName = fileName;
     }
     protected String[][] readAnswersOverseer(){
         String[][] answerData = readAnswersProcess(fileName);
