@@ -5,7 +5,7 @@ class AnswerDataReader extends ReaderWriter{
         this.fileName = fileName;
     }
     protected String[][] readAnswersOverseer(){
-        String[][] answerData = readAnswersProcess(fileName);
+        String[][] answerData = readAnswersProcess(this.fileName);
         return answerData;
     }
     public static String[][] readAnswersProcess(String answerDataFileName) {
