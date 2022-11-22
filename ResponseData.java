@@ -9,8 +9,6 @@ public class ResponseData{
         //will take answer data file from the response reader
         //runs this as the 2D array
         this.ResponseData = reader.readResponsesOverseer();
-        compareAnswers();
+        checkAnswers();
     }
-    //grabs readResponses method, and put its data into responseData 2D array
-    //String [][] responseData = readResponses();
 }
