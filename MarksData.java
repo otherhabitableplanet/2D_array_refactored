@@ -3,10 +3,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class MarksData extends ReaderWriter{
-    public static void main(){
+    /*public static void main(){
         String[][] AnswerData;
         String[][] ResponseData;
         String newFileName;
+        */
     }
     /**
      * Writes a two dimensional array into a csv file
