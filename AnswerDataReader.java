@@ -1,10 +1,14 @@
 import java.io.*;
+import java.util.Scanner;
 class AnswerDataReader extends ReaderWriter{
-    protected String[][] read(){
-        answers(fileName);
-        return fileBeenRead;
+    public AnswerDataReader(){
+        this.fileName = getName();
     }
-    public static String[][] answers(String answerDataFileName) {
+    protected String[][] readAnswersOverseer(){
+        String[][] answerData = readAnswersProcess(fileName);
+        return answerData;
+    }
+    public static String[][] readAnswersProcess(String answerDataFileName) {
 
         // String answerDataFileName = "answerData1.txt";
         int answerTotalLines = countLines(answerDataFileName);
@@ -59,5 +63,12 @@ class AnswerDataReader extends ReaderWriter{
 
 	   		}
 		}
+    }
+    protected String getName(){
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Input the name of the file containing answer data. Include the proper path.");
+        String name = reader.nextLine();
+        reader.close();
+        return name;
     }
 }

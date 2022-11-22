@@ -3,9 +3,7 @@ import java.util.Scanner;
 
 class ReaderWriter {
     // Identified upon instantiation
-
-
-
+    protected String fileName;
     String[][] fileBeenRead;
 
     protected String[][] read(){

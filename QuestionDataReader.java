@@ -1,12 +1,10 @@
 import java.io.*;
 import java.util.Scanner;
 class QuestionDataReader extends ReaderWriter{
-	protected String fileName;
     protected String[] questionData;
 	public QuestionDataReader(){
 		this.fileName = getName();
 		this.questionData = new String[countLines(this.fileName)];
-		readQuestionsOverseer();
 
 	}
     protected String[] readQuestionsOverseer(){
