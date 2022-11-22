@@ -10,7 +10,7 @@ public class ResponseData{
         ResponseDataReader reader = new ResponseDataReader(fileName);
         //will take answer data file from the response reader
         //runs this as the 2D array
-        this.ResponseData = reader.readAnswersOverseer();
+        this.ResponseData = reader.readResponseOverseer();
     }
     //grabs readResponses method, and put its data into responseData 2D array
     //String [][] responseData = readResponses();
