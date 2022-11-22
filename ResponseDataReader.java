@@ -19,11 +19,11 @@ class ResponseDataReader extends ReaderWriter{
             br = new BufferedReader(new FileReader(filename));
                	//One way of reading the file
 			// System.out.println("Counting the number of lines...");
-			String contentLine = br.readLine();
-			while (contentLine != null) {
-				// System.out.println(contentLine + " " + count);
-                responseData[count] = contentLine.split(",");
-                contentLine = br.readLine();
+			String currentLine = br.readLine();
+			while (currentLine != null) {
+				// System.out.println(currentLine + " " + count);
+                responseData[count] = currentLine.split(",");
+                currentLine = br.readLine();
                 count++;
 			}
        	}

@@ -19,12 +19,12 @@ class StudentDataReader extends ReaderWriter{
             br = new BufferedReader(new FileReader(filename));
                	//One way of reading the file
 			// System.out.println("Counting the number of lines...");
-			String contentLine = br.readLine();
-			while (contentLine != null) {
+			String currentLine = br.readLine();
+			while (currentLine != null) {
 
-				// System.out.println(contentLine + " " + count);
-                studentData[count] = contentLine.split(",");
-                contentLine = br.readLine();
+				// System.out.println(currentLine + " " + count);
+                studentData[count] = currentLine.split(",");
+                currentLine = br.readLine();
                 count++;
 			}
        	}
