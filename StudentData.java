@@ -3,13 +3,11 @@ class StudentData {
   protected String fileName;
   // initialize 2D array for StudentData
   protected String[][] StudentData;
-  
-  // constructor for studentData 
-  public StudentData(String fileName){
-    // takes file name and gives it to reader
-    this.fileName = fileName;
+
+  // constructor for studentData
+  public StudentData(){
     // takes student data from student data reader
-    StudentDataReader reader = new StudentDataReader(fileName);
+    StudentDataReader reader = new StudentDataReader();
     // runs overseer method that stores studentData in a 2D array
     this.StudentData = reader.readStudentsOverseer();
     }
