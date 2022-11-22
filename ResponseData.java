@@ -2,6 +2,7 @@ public class ResponseData{
     protected String fileName;
     //going to be a string list called ansData
     protected String[][] ResponseData;
+    
     //constructor for answerData file name
     public ResponseData(String fileName){
         //takes file name, then gives the reader
