@@ -1,7 +1,7 @@
 class AnswerData{
-
     protected String fileName;
     protected String[][] AnswerData;
+    
     // constructor for answerData file name
     public AnswerData(String fileName){
         //takes file name, then gives the reader
