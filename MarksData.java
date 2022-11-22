@@ -1,22 +1,23 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class MarksData extends ReaderWriter{
     /*public static void main(){
         String[][] AnswerData;
         String[][] ResponseData;
         String newFileName;
-        */
     }
+        */
     /**
      * Writes a two dimensional array into a csv file
-     * @param name name of the file to be created
      * @param data the 2D array that is being written into the file
      */
-    public static void putlnCsv(String name, String[][] data){
+    public static void putlnCsv(String[][] data){
         try {
             // Initialize new file
+            String name = getNewName();
             File myObj = new File(name);
             if (myObj.createNewFile()) {
                 System.out.println("File created: " + myObj.getName());
@@ -43,5 +44,12 @@ public class MarksData extends ReaderWriter{
                 e.printStackTrace();
           }
 
+    }
+    public static String getNewName(){
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Input the name of your new file. (Include the file type ex. .txt, .csv)");
+        String newName = reader.nextLine();
+        reader.close();
+        return newName;
     }
 }

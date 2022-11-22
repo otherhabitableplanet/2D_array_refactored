@@ -1,8 +1,8 @@
 import java.io.*;
+import java.util.Scanner;
 
-abstract class ReaderWriter {
+class ReaderWriter {
     // Identified upon instantiation
-    protected String fileName;
 
 
 
@@ -66,7 +66,14 @@ abstract class ReaderWriter {
 	   		}
 		}
     }
+    protected String fileName(){
+        Scanner reader = new Scanner(System.in);
+        String newName = reader.nextLine();
+        reader.close();
+        return newName;
     }
+}
+
 
 
 

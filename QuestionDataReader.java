@@ -1,11 +1,19 @@
 import java.io.*;
+import java.util.Scanner;
 class QuestionDataReader extends ReaderWriter{
-    protected String[] questionsRead;
-    protected String[] readQuestions(){
-        readQuestions(fileName, null);
-        return questionsRead;
+	protected String fileName;
+    protected String[] questionData;
+	public QuestionDataReader(){
+		this.fileName = getName();
+		this.questionData = new String[countLines(this.fileName)];
+		readQuestionsOverseer();
+
+	}
+    protected String[] readQuestionsOverseer(){
+        readQuestionsProcess(this.fileName, this.questionData);
+        return questionData;
     }
-    public static void readQuestions(String filename, String[] questionData){
+    public static void readQuestionsProcess(String filename, String[] questionData){
         BufferedReader br = null;
         int count = 0;
         // System.out.println("Running readQuestions method:");
@@ -38,5 +46,12 @@ class QuestionDataReader extends ReaderWriter{
 
 	   		}
 		}
+    }
+	protected String getName(){
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Input the name of the file containing question data. Include the proper path.");
+        String name = reader.nextLine();
+        reader.close();
+        return name;
     }
 }

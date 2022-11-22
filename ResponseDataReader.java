@@ -1,10 +1,14 @@
 import java.io.*;
 class ResponseDataReader extends ReaderWriter{
+
     protected String[][] fileBeenRead;
     protected String[][] read(){
         readResponses(fileName, fileBeenRead);
         return fileBeenRead;
     }
+	protected ResponseDataReader(String[][] fileBeenRead, String[][] filename){
+
+	}
     public static void readResponses(String filename, String[][] responseData){
         BufferedReader br = null;
         int count = 0;
@@ -16,8 +20,6 @@ class ResponseDataReader extends ReaderWriter{
 			// System.out.println("Counting the number of lines...");
 			String contentLine = br.readLine();
 			while (contentLine != null) {
-
-
 				// System.out.println(contentLine + " " + count);
                 responseData[count] = contentLine.split(",");
                 contentLine = br.readLine();
@@ -39,4 +41,7 @@ class ResponseDataReader extends ReaderWriter{
 	   		}
 		}
     }
+	private void addCount(){
+
+	}
 }
