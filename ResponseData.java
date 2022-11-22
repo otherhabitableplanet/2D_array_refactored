@@ -1,6 +1,6 @@
 public class ResponseData{
     protected String fileName;
-    //going to be a string list called ansData
+    //going to be a string list called ResponseData
     protected String[][] ResponseData;
     
     //constructor for answerData file name
