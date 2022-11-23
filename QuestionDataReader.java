@@ -28,15 +28,15 @@ class QuestionDataReader extends ReaderWriter{
 	 */
     public void readQuestionsProcess(String filename, String[][] questionData){
        // String answerDataFileName = "answerData1.txt";
-	   int answerTotalLines = countLines(filename);
-	   // System.out.println(answerTotalLines);
-	   String[] lines = new String[answerTotalLines];
+	   int questionTotalLines = countLines(filename);
+	   // System.out.println(questionTotalLines);
+	   String[] lines = new String[questionTotalLines];
 	   readLines(filename, lines);
-	   this.questionData = new String[(answerTotalLines + 1) / 3][];
+	   this.questionData = new String[(questionTotalLines + 1) / 3][];
 
 	   // Loops through the lines in the answer file
 	   // Bundles the data into groups of 2, answer number and answer values
-	   for (int i = 0; i < answerTotalLines; i += 3){
+	   for (int i = 0; i < questionTotalLines; i += 3){
 		   String name = lines[i];
 		   String answer = lines[i + 1];
 		   questionData[i/3] = new String[2];
