@@ -2,8 +2,8 @@ import java.io.*;
 import java.util.Scanner;
 class ResponseDataReader extends ReaderWriter{
 	protected String[][] responseData;
-	public ResponseDataReader(){
-		this.fileName = getName();
+	public ResponseDataReader(Scanner reader){
+		this.fileName = getName(reader);
 		this.responseData = new String[countLines(fileName)][ansLenCount(fileName)];
 	}
     protected String[][] readResponsesOverseer(){
@@ -42,11 +42,9 @@ class ResponseDataReader extends ReaderWriter{
 	   		}
 		}
     }
-	protected String getName(){
-        Scanner reader = new Scanner(System.in);
+	protected String getName(Scanner reader){
         System.out.println("Input the name of the file containing response data. Include the proper path.");
         String name = reader.nextLine();
-        reader.close();
         return name;
     }
 	protected int ansLenCount(String filename){

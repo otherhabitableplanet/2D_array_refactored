@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.Scanner;
 class QuestionDataReader extends ReaderWriter{
     protected String[][] questionData;
 	public QuestionDataReader(String fileName){
@@ -29,13 +28,6 @@ class QuestionDataReader extends ReaderWriter{
 		   questionData[i/3][1] = answer;
 	   }
 
-    }
-	protected String getName(){
-        Scanner reader = new Scanner(System.in);
-        System.out.println("Input the name of the file containing question data. Include the proper path.");
-        String name = reader.nextLine();
-        reader.close();
-        return name;
     }
 	protected int ansLenCount(String filename){
         BufferedReader br = null;

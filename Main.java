@@ -3,30 +3,29 @@ import java.io.*;
 
 class Main {
     public static void main(String[] args){
-        StudentData studentData = new StudentData(); // add contstructor
+        Scanner reader = new Scanner(System.in);
+        StudentData studentData = new StudentData(reader); // add contstructor
 
-        String fileName = getFileName();
+        String fileName = getFileName(reader);
 
-        AnswerData answerData;
 
         if(!isAnswerFile(fileName)){
             QuestionData questionData = new QuestionData(fileName); // add constructor
         }
 
-        answerData = new AnswerData(fileName);
+        AnswerData answerData = new AnswerData(fileName);
 
-        ResponseData responseData = new ResponseData(); // add constructor
+        ResponseData responseData = new ResponseData(reader); // add constructor
 
 
         MarksData marksData = new MarksData();
-        marksData.putlnCsv(compareAnswers.checkAnswers(responseData.ResponseData, answerData.AnswerData));
+        marksData.putlnCsv(compareAnswers.checkAnswers(responseData.ResponseData, answerData.AnswerData), reader);
 
+        reader.close();
     }
-    public static String getFileName(){
-        Scanner reader = new Scanner(System.in);
+    public static String getFileName(Scanner reader){
         System.out.println("Input the name of the file containing question data. Include the proper path.");
         String fileName = reader.nextLine();
-        reader.close();
         return fileName;
     }
     public static boolean isAnswerFile(String filename){

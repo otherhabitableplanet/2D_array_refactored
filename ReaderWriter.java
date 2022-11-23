@@ -40,10 +40,8 @@ class ReaderWriter {
 		}
     }
 
-    protected String fileName(){
-        Scanner reader = new Scanner(System.in);
+    protected String fileName(Scanner reader){
         String newName = reader.nextLine();
-        reader.close();
         return newName;
     }
 }

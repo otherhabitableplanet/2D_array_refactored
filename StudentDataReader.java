@@ -2,8 +2,8 @@ import java.io.*;
 import java.util.Scanner;
 class StudentDataReader extends ReaderWriter{
     protected String[][] studentData;
-	public StudentDataReader(){
-		this.fileName = getName();
+	public StudentDataReader(Scanner reader){
+		this.fileName = getName(reader);
 		this.studentData = new String[countLines(this.fileName)][5];
 	}
     protected String[][] readStudentsOverseer(){
@@ -43,11 +43,9 @@ class StudentDataReader extends ReaderWriter{
 	   		}
 		}
     }
-	protected String getName(){
-        Scanner reader = new Scanner(System.in);
+	protected String getName(Scanner reader){
         System.out.println("Input the name of the file containing student data. Include the proper path.");
         String name = reader.nextLine();
-        reader.close();
         return name;
     }
 }

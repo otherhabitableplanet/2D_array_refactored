@@ -15,10 +15,10 @@ public class MarksData{
      * Writes a two dimensional array into a csv file
      * @param data the 2D array that is being written into the file
      */
-    public void putlnCsv(String[][] data){
+    public void putlnCsv(String[][] data, Scanner reader){
         try {
             // Initialize new file
-            String name = getNewName();
+            String name = getNewName(reader);
             File myObj = new File(name);
             if (myObj.createNewFile()) {
                 System.out.println("File created: " + myObj.getName());
@@ -46,11 +46,9 @@ public class MarksData{
           }
 
     }
-    public static String getNewName(){
-        Scanner reader = new Scanner(System.in);
+    public static String getNewName(Scanner reader){
         System.out.println("Input the name of your new file. (Include the file type ex. .txt, .csv)");
         String newName = reader.nextLine();
-        reader.close();
         return newName;
     }
 }

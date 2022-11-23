@@ -64,11 +64,4 @@ class AnswerDataReader extends ReaderWriter{
 	   		}
 		}
     }
-    protected String getName(){
-        Scanner reader = new Scanner(System.in);
-        System.out.println("Input the name of the file containing answer data. Include the proper path.");
-        String name = reader.nextLine();
-        reader.close();
-        return name;
-    }
 }
