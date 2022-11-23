@@ -1,8 +1,5 @@
 public class compareAnswers{
-    /*
-    String[][] responseData;
-    String[][] answerData;
-    */
+    //for program to refer to
     protected String[][] marksData;
 
     public static String[][] checkAnswers(String[][] responseData, String[][] answerData){
