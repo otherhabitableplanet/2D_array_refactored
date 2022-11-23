@@ -4,7 +4,10 @@ class StudentData {
   // initialize 2D array for StudentData
   protected String[][] StudentData;
 
-  // constructor for studentData
+  /**
+  * Constructor for StudentData object
+  * @param reader the scanner object used to read user input
+  */
   public StudentData(Scanner reader){
     // takes student data from student data reader
     StudentDataReader sDReader = new StudentDataReader(reader);
