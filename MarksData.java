@@ -4,13 +4,9 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class MarksData{
-    /*public static void main(){
-        String[][] AnswerData;
-        String[][] ResponseData;
-        String newFileName;
-    }
-        */
+    //going to be a string list called data
     protected String[][] data;
+    
     /**
      * Writes a two dimensional array into a csv file
      * @param data the 2D array that is being written into the file
@@ -33,19 +29,22 @@ public class MarksData{
                         }
                     }
                     writer.write("\n");
-
                 }
                 writer.close();
+            }
             // If file already exists, give an appropriate warning
-            } else {
+            else {
                 System.out.println("File already exists.");
             }
-          } catch (IOException e) {
+        }
+        catch (IOException e) {
                 System.out.println("An error occurred.");
                 e.printStackTrace();
           }
-
     }
+    
+    //This will take the input from user and set it as the name of the new file
+    //@param reader to refer to scanner
     public static String getNewName(Scanner reader){
         System.out.println("Input the name of your new file. (Include the file type ex. .txt, .csv)");
         String newName = reader.nextLine();
