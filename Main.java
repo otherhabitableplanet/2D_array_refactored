@@ -5,17 +5,18 @@ class Main {
     public static void main(String[] args){
         StudentData studentData = new StudentData(); // add contstructor
         String fileName = getFileName();
+        AnswerData answerData;
         if(!isAnswerFile(fileName)){
             QuestionData questionData = new QuestionData(); // add constructor
         }
         else{
-            AnswerData answerData = new AnswerData(fileName);
+            answerData = new AnswerData(fileName);
         }
 
         ResponseData responseData = new ResponseData(); // add constructor
 
 
-        MarksData marksData = new MarksData(responseData.compareAnswers());
+        MarksData marksData = new MarksData(compareAnswers.checkAnswers(responseData, answerData));
         marksData.putlnCsv();
 
     }

@@ -1,7 +1,7 @@
 class QuestionData {
   protected String fileName;
   //initialize array
-  protected String[] questionData;
+  protected String[][] questionData;
 
   // constructor for questionData
   public QuestionData(String fileName){
