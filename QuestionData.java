@@ -3,7 +3,10 @@ class QuestionData {
   //initialize array
   protected String[][] questionData;
 
-  // constructor for questionData
+  /**
+  * Constructor for questionData object
+  * @param fileName name of the file to be read
+  */
   public QuestionData(String fileName){
     //takes file name and gives it to reader
     this.fileName = fileName;
