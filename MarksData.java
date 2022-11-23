@@ -3,13 +3,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class MarksData extends ReaderWriter{
+public class MarksData{
     /*public static void main(){
         String[][] AnswerData;
         String[][] ResponseData;
         String newFileName;
     }
         */
+    protected String[][] data;
     /**
      * Writes a two dimensional array into a csv file
      * @param data the 2D array that is being written into the file

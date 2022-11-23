@@ -7,7 +7,7 @@ class Main {
         String fileName = getFileName();
         AnswerData answerData;
         if(!isAnswerFile(fileName)){
-            QuestionData questionData = new QuestionData(); // add constructor
+            QuestionData questionData = new QuestionData(fileName); // add constructor
         }
         else{
             answerData = new AnswerData(fileName);
@@ -16,8 +16,8 @@ class Main {
         ResponseData responseData = new ResponseData(); // add constructor
 
 
-        MarksData marksData = new MarksData(compareAnswers.checkAnswers(responseData, answerData));
-        marksData.putlnCsv();
+        MarksData marksData = new MarksData();
+        marksData.putlnCsv(compareAnswers.checkAnswers(responseData, answerData));
 
     }
     public static String getFileName(){
