@@ -1,8 +1,5 @@
 public class compareAnswers{
-    /*
-    String[][] responseData;
-    String[][] answerData;
-    */
+    //for program to refer to
     protected String[][] marksData;
 
     public static String[][] checkAnswers(String[][] responseData, String[][] answerData){
@@ -17,9 +14,9 @@ public class compareAnswers{
             //starts from index 0 and keeps going up through each student column
             //where to write student name and info in the marksData 2D array
             marksData[i - 1][0] = student[0];//at index [0][0], student [0] info will be written at that index
-            marksData[i - 1][1] = student[1];//marksData[1][1]
-            marksData[i - 1][2] = student[2];//marksData[2][2]
-            marksData[i - 1][3] = student[3];//marksData[3][3]
+            marksData[i - 1][1] = student[1];//marksData[0][1] - for first trial through for loop:
+            marksData[i - 1][2] = student[2];//marksData[0][2]
+            marksData[i - 1][3] = student[3];//marksData[0][3]
             int score = 0;//counter for score
             //columns; student.length = 4
             //checks from index 4 and up, and does not compare any other index before it
