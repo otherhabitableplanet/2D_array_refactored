@@ -15,7 +15,7 @@ public class MarksData{
      * Writes a two dimensional array into a csv file
      * @param data the 2D array that is being written into the file
      */
-    public static void putlnCsv(String[][] data){
+    public void putlnCsv(String[][] data){
         try {
             // Initialize new file
             String name = getNewName();

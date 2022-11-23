@@ -9,6 +9,5 @@ public class ResponseData{
         //will take answer data file from the response reader
         //runs this as the 2D array
         this.ResponseData = reader.readResponsesOverseer();
-        checkAnswers();
     }
 }

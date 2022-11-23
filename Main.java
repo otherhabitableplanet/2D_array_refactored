@@ -4,25 +4,27 @@ import java.io.*;
 class Main {
     public static void main(String[] args){
         StudentData studentData = new StudentData(); // add contstructor
+
         String fileName = getFileName();
+
         AnswerData answerData;
+
         if(!isAnswerFile(fileName)){
             QuestionData questionData = new QuestionData(fileName); // add constructor
         }
-        else{
-            answerData = new AnswerData(fileName);
-        }
+
+        answerData = new AnswerData(fileName);
 
         ResponseData responseData = new ResponseData(); // add constructor
 
 
         MarksData marksData = new MarksData();
-        marksData.putlnCsv(compareAnswers.checkAnswers(responseData, answerData));
+        marksData.putlnCsv(compareAnswers.checkAnswers(responseData.ResponseData, answerData.AnswerData));
 
     }
     public static String getFileName(){
         Scanner reader = new Scanner(System.in);
-        System.out.println("Input the name of the file containing answer data. Include the proper path.");
+        System.out.println("Input the name of the file containing question data. Include the proper path.");
         String fileName = reader.nextLine();
         reader.close();
         return fileName;
