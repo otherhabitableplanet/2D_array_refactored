@@ -43,8 +43,10 @@ public class MarksData{
           }
     }
     
-    //This will take the input from user and set it as the name of the new file
-    //@param reader to refer to scanner
+    /*
+    * This will take the input from user and set it as the name of the new file
+    * @param reader reads user input
+    */
     public static String getNewName(Scanner reader){
         System.out.println("Input the name of your new file. (Include the file type ex. .txt, .csv)");
         String newName = reader.nextLine();
