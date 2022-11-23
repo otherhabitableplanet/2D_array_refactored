@@ -5,6 +5,10 @@ class ReaderWriter {
     // Identified upon instantiation
     protected String fileName;
 
+    /**
+     * @param file file to count lines in
+     * @return the number of lines
+     */
     protected static int countLines(String file) {
         // Declare a file reader called br
         BufferedReader br = null;
@@ -39,9 +43,12 @@ class ReaderWriter {
 	   		}
 		}
     }
-
+    /**
+     * @param reader reads user input
+     * @return the name of the file
+     */
     protected String fileName(Scanner reader){
-        String newName = reader.nextLine();
-        return newName;
+        String fileName = reader.nextLine();
+        return fileName;
     }
 }

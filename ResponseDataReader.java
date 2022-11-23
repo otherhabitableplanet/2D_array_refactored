@@ -2,14 +2,30 @@ import java.io.*;
 import java.util.Scanner;
 class ResponseDataReader extends ReaderWriter{
 	protected String[][] responseData;
+
+	/**
+	 * The constructor for the responseDataReader object
+	 * @param reader the scanner used to read user input
+	 */
 	public ResponseDataReader(Scanner reader){
 		this.fileName = getName(reader);
 		this.responseData = new String[countLines(fileName)][ansLenCount(fileName)];
 	}
+
+	/**
+	 * Runs the readResponsesProcess and
+	 * @return the results of the process as a 2D String array
+	 */
     protected String[][] readResponsesOverseer(){
         readResponsesProcess(fileName, responseData);
         return responseData;
     }
+
+	/**
+	 * Reads the the response data file and sorts the data into a 2D String array
+	 * @param filename the file being read
+	 * @param responseData the end location of the data read from the file
+	 */
     public static void readResponsesProcess(String filename, String[][] responseData){
         BufferedReader br = null;
         int count = 0;
@@ -42,11 +58,23 @@ class ResponseDataReader extends ReaderWriter{
 	   		}
 		}
     }
+
+	/**
+	 * Gets the name of the file containing response data
+	 * @param reader the scanner object used to read user input
+	 * @return the name of the file
+	 */
 	protected String getName(Scanner reader){
         System.out.println("Input the name of the file containing response data. Include the proper path.");
         String name = reader.nextLine();
         return name;
     }
+
+	/**
+	 * Counts the max amount of commas in a file which is one less than the max length of a line in the file
+	 * @param filename the file being read
+	 * @return the number of commas
+	 */
 	protected int ansLenCount(String filename){
         BufferedReader br = null;
         int answerLength = 0;

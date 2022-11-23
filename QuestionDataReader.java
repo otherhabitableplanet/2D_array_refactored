@@ -1,15 +1,31 @@
 import java.io.*;
 class QuestionDataReader extends ReaderWriter{
     protected String[][] questionData;
+
+	/**
+	 * Constructs the questionDataReader object
+	 * @param fileName name of the file to be read
+	 */
 	public QuestionDataReader(String fileName){
 		this.fileName = fileName;
 		this.questionData = new String[countLines(this.fileName)][ansLenCount(fileName)];
 
 	}
+
+	/**
+	 * Runs the reading process and returns the result
+	 * @return questionData as a 2D String array, clean and ready to be used
+	 */
     protected String[][] readQuestionsOverseer(){
         readQuestionsProcess(this.fileName, this.questionData);
         return questionData;
     }
+
+	/**
+	 * Reads a given question file into a 2D String array
+	 * @param filename the file being read
+	 * @param questionData the end destination of the data read from the file
+	 */
     public void readQuestionsProcess(String filename, String[][] questionData){
        // String answerDataFileName = "answerData1.txt";
 	   int answerTotalLines = countLines(filename);
@@ -29,6 +45,12 @@ class QuestionDataReader extends ReaderWriter{
 	   }
 
     }
+
+	/**
+	 * Counts the max amount of answers in a csv file, equal to max number of commas + 1
+	 * @param filename the file being read
+	 * @return the max number of commas/answers
+	 */
 	protected int ansLenCount(String filename){
         BufferedReader br = null;
         int answerLength = 0;
@@ -65,6 +87,11 @@ class QuestionDataReader extends ReaderWriter{
 		}
             return answerLength;
     }
+
+	/**
+	 * @param filename the file being read
+	 * @param lines a String array used to split a line into multiple items
+	 */
 	public static void readLines(String filename, String[] lines){
         BufferedReader br = null;
         int count = 0;

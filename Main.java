@@ -23,11 +23,20 @@ class Main {
 
         reader.close();
     }
+    /**
+     * @param reader reads user input
+     * @return the name of the file
+     */
     public static String getFileName(Scanner reader){
         System.out.println("Input the name of the file containing question data. Include the proper path.");
         String fileName = reader.nextLine();
         return fileName;
     }
+    /**
+     * Checks the starting line of a file to see if it contains answer data or question data
+     * @param filename the file that is being checked
+     * @return whether or not the file contains answer data
+     */
     public static boolean isAnswerFile(String filename){
         BufferedReader br = null;
         boolean isAnswerFile = false;

@@ -1,13 +1,29 @@
 import java.io.*;
 import java.util.Scanner;
 class AnswerDataReader extends ReaderWriter{
+
+    /**
+     * Constructor for answerDataReader object
+     * @param fileName name of the file to be read
+     */
     public AnswerDataReader(String fileName){
         this.fileName = fileName;
     }
+
+    /**
+     * Runs the readAnswersProcess and
+     * @return the result of the readAnswersProcess as a 2D array
+     */
     protected String[][] readAnswersOverseer(){
         String[][] answerData = readAnswersProcess(this.fileName);
         return answerData;
     }
+
+    /**
+     * Reads through a given file and sorts the answer data properly
+     * @param answerDataFileName the file being read
+     * @return the answerData as a 2D array
+     */
     public static String[][] readAnswersProcess(String answerDataFileName) {
 
         // String answerDataFileName = "answerData1.txt";
@@ -30,6 +46,10 @@ class AnswerDataReader extends ReaderWriter{
         // printData(answerData);
         return answerData;
     }
+    /**
+	 * @param filename the file being read
+	 * @param lines a String array used to split a line into multiple items
+	 */
     public static void readLines(String filename, String[] lines){
         BufferedReader br = null;
         int count = 0;
