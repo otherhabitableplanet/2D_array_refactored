@@ -7,7 +7,7 @@ public class ResponseData{
     //constructor for ResponseData file name
     public ResponseData(Scanner reader){
         ResponseDataReader rDReader = new ResponseDataReader(reader);
-        //will take answer data file from the response reader
+        //will take response data file from the responseDataReader
         //runs this as the 2D array
         this.ResponseData = rDReader.readResponsesOverseer();
     }
